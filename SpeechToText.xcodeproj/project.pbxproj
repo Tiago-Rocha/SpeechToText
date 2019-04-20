@@ -16,6 +16,9 @@
 		476D399B22666A1F00C318BD /* SpeechToTextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D399A22666A1F00C318BD /* SpeechToTextUITests.swift */; };
 		476D39AB226681B000C318BD /* SpeechRecognizerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */; };
 		476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */; };
+		476D39BF226BD8A700C318BD /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39BE226BD8A700C318BD /* NoteRepository.swift */; };
+		476D39C3226BD90B00C318BD /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C2226BD90B00C318BD /* Note.swift */; };
+		476D39C5226BD97D00C318BD /* UserDefaultsNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C4226BD97D00C318BD /* UserDefaultsNotesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		476D399C22666A1F00C318BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerProtocol.swift; sourceTree = "<group>"; };
 		476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSpeechRecnogizer.swift; sourceTree = "<group>"; };
+		476D39BE226BD8A700C318BD /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
+		476D39C2226BD90B00C318BD /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		476D39C4226BD97D00C318BD /* UserDefaultsNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsNotesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +107,11 @@
 		476D397922666A1C00C318BD /* SpeechToText */ = {
 			isa = PBXGroup;
 			children = (
+				476D39BA226BD7A800C318BD /* MainViewController */,
 				476D39B6226B9A0400C318BD /* Services */,
 				476D39B3226B981700C318BD /* DI */,
 				476D39A82266801700C318BD /* Storage */,
 				476D397A22666A1C00C318BD /* AppDelegate.swift */,
-				476D397C22666A1C00C318BD /* ViewController.swift */,
 				476D397E22666A1C00C318BD /* Main.storyboard */,
 				476D398122666A1E00C318BD /* Assets.xcassets */,
 				476D398322666A1E00C318BD /* LaunchScreen.storyboard */,
@@ -135,6 +141,8 @@
 		476D39A82266801700C318BD /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				476D39C1226BD90200C318BD /* Models */,
+				476D39BD226BD89400C318BD /* Repositories */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -177,6 +185,39 @@
 				476D39B5226B99EF00C318BD /* AudioRecognizerService */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		476D39BA226BD7A800C318BD /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				476D397C22666A1C00C318BD /* ViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		476D39BD226BD89400C318BD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				476D39C0226BD8B900C318BD /* TextRecording */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		476D39C0226BD8B900C318BD /* TextRecording */ = {
+			isa = PBXGroup;
+			children = (
+				476D39BE226BD8A700C318BD /* NoteRepository.swift */,
+				476D39C4226BD97D00C318BD /* UserDefaultsNotesRepository.swift */,
+			);
+			path = TextRecording;
+			sourceTree = "<group>";
+		};
+		476D39C1226BD90200C318BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				476D39C2226BD90B00C318BD /* Note.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,8 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				476D39BF226BD8A700C318BD /* NoteRepository.swift in Sources */,
+				476D39C3226BD90B00C318BD /* Note.swift in Sources */,
 				476D397D22666A1C00C318BD /* ViewController.swift in Sources */,
 				476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */,
+				476D39C5226BD97D00C318BD /* UserDefaultsNotesRepository.swift in Sources */,
 				476D397B22666A1C00C318BD /* AppDelegate.swift in Sources */,
 				476D39AB226681B000C318BD /* SpeechRecognizerProtocol.swift in Sources */,
 			);
