@@ -1,6 +1,6 @@
 import Foundation
 
-struct Note: Codable {
+struct Note {
     
     public let id: Int
     
