@@ -22,7 +22,7 @@
                                 <rect key="frame" x="164" y="309" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="microphoneBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J9F-Pm-Mnf"/>
+                                    <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BRZ-9r-ZRv"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dVY-gg-uuz">
@@ -36,11 +36,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjV-AC-U8v">
+                                <rect key="frame" x="164.5" y="366.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BzL-0X-S2K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BjV-AC-U8v" firstAttribute="top" secondItem="8kY-Bb-SIq" secondAttribute="bottom" constant="8" id="0zd-gp-Yxu"/>
                             <constraint firstItem="8kY-Bb-SIq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="H6l-UU-ESe"/>
+                            <constraint firstItem="BjV-AC-U8v" firstAttribute="leading" secondItem="8kY-Bb-SIq" secondAttribute="leading" id="Ohc-QM-KAZ"/>
                             <constraint firstItem="8kY-Bb-SIq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yv1-zb-AYQ"/>
+                            <constraint firstItem="BjV-AC-U8v" firstAttribute="trailing" secondItem="8kY-Bb-SIq" secondAttribute="trailing" id="ipb-3U-Z1S"/>
                             <constraint firstItem="dVY-gg-uuz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="r7j-mE-RTF"/>
                             <constraint firstItem="dVY-gg-uuz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ykt-xo-xhO"/>
                         </constraints>
