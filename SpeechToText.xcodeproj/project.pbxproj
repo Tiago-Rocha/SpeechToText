@@ -14,6 +14,8 @@
 		476D398522666A1E00C318BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476D398322666A1E00C318BD /* LaunchScreen.storyboard */; };
 		476D399022666A1F00C318BD /* SpeechToTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D398F22666A1F00C318BD /* SpeechToTextTests.swift */; };
 		476D399B22666A1F00C318BD /* SpeechToTextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D399A22666A1F00C318BD /* SpeechToTextUITests.swift */; };
+		476D39AB226681B000C318BD /* SpeechRecognizerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */; };
+		476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		476D399622666A1F00C318BD /* SpeechToTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechToTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		476D399A22666A1F00C318BD /* SpeechToTextUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextUITests.swift; sourceTree = "<group>"; };
 		476D399C22666A1F00C318BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerProtocol.swift; sourceTree = "<group>"; };
+		476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSpeechRecnogizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,9 @@
 		476D397922666A1C00C318BD /* SpeechToText */ = {
 			isa = PBXGroup;
 			children = (
+				476D39B6226B9A0400C318BD /* Services */,
+				476D39B3226B981700C318BD /* DI */,
+				476D39A82266801700C318BD /* Storage */,
 				476D397A22666A1C00C318BD /* AppDelegate.swift */,
 				476D397C22666A1C00C318BD /* ViewController.swift */,
 				476D397E22666A1C00C318BD /* Main.storyboard */,
@@ -123,6 +130,53 @@
 				476D399C22666A1F00C318BD /* Info.plist */,
 			);
 			path = SpeechToTextUITests;
+			sourceTree = "<group>";
+		};
+		476D39A82266801700C318BD /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		476D39A92266819D00C318BD /* SpeechRecongizer */ = {
+			isa = PBXGroup;
+			children = (
+				476D39B0226B978E00C318BD /* iOS */,
+				476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */,
+			);
+			path = SpeechRecongizer;
+			sourceTree = "<group>";
+		};
+		476D39B0226B978E00C318BD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		476D39B3226B981700C318BD /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		476D39B5226B99EF00C318BD /* AudioRecognizerService */ = {
+			isa = PBXGroup;
+			children = (
+				476D39A92266819D00C318BD /* SpeechRecongizer */,
+			);
+			path = AudioRecognizerService;
+			sourceTree = "<group>";
+		};
+		476D39B6226B9A0400C318BD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				476D39B5226B99EF00C318BD /* AudioRecognizerService */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				476D397D22666A1C00C318BD /* ViewController.swift in Sources */,
+				476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */,
 				476D397B22666A1C00C318BD /* AppDelegate.swift in Sources */,
+				476D39AB226681B000C318BD /* SpeechRecognizerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
