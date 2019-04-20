@@ -104,15 +104,13 @@ class ViewController: UIViewController {
     }
 }
 extension ViewController: AVAudioRecorderDelegate {
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        print("finished recording")
 
         if flag {
-            let text = recognizer?.audioToText(url: recorder.url) {
+            recognizer?.audioToText(url: recorder.url) {
                 text, error in
                 self.textView.text = text
-
-
             }
         } else {
             finishRecording(success: false)
