@@ -2,9 +2,10 @@ import UIKit
 import Speech
 
 class ViewController: UIViewController {
-    
-    private var recognizer: SpeechRecognizerProtocol? = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
 
+    private let viewModel = RecorderViewModel(noteRepository: MemoryNotesRepository()
+        , recognizer: SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!)
+    
     @IBOutlet weak var microphoneButton: UIButton!
     
     @IBOutlet weak var textView: UITextView!
@@ -12,8 +13,6 @@ class ViewController: UIViewController {
     var recordingSession: AVAudioSession!
     
     var audioRecorder: AVAudioRecorder!
-    
-    private let currentRecordingName = "current.m4a"
     
     override func viewDidLoad() {
         
@@ -51,8 +50,6 @@ class ViewController: UIViewController {
     
     func startRecording() {
         
-        let temporaryFileURL = getDocumentsDirectory().appendingPathComponent(currentRecordingName)
-        
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -61,7 +58,7 @@ class ViewController: UIViewController {
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: temporaryFileURL, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: viewModel.temporaryFileURL, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
             
@@ -81,11 +78,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
     func finishRecording(success: Bool) {
         audioRecorder.stop()
         clearAudioRecorder()
@@ -103,14 +95,20 @@ class ViewController: UIViewController {
         audioRecorder = nil
     }
 }
+
 extension ViewController: AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
 
         if flag {
-            recognizer?.audioToText(url: recorder.url) {
-                text, error in
-                self.textView.text = text
+            viewModel.recognizeAudioFrom(url: recorder.url) { [unowned self] text, error in
+             
+                guard error != nil else {
+                    self.viewModel.save(recordingText: text)
+                    self.finishRecording(success: true)
+                    return
+                }
+                self.finishRecording(success: false)
             }
         } else {
             finishRecording(success: false)
