@@ -3,7 +3,7 @@ import Speech
 
 class ViewController: UIViewController {
 
-    private let viewModel = DependencyGraph().getRecorderViewModel()
+    private let viewModel = DependencyGraph.shared.getRecorderViewModel()
     
     @IBOutlet weak var microphoneButton: UIButton!
     
@@ -49,15 +49,15 @@ class ViewController: UIViewController {
     
     func startRecording() {
         
-        let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 12000,
-            AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-        ]
-        
         do {
-            audioRecorder = try AVAudioRecorder(url: viewModel.temporaryFileURL, settings: settings)
+            let recorderSettings = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                    AVSampleRateKey: 12000,
+                    AVNumberOfChannelsKey: 1,
+                    AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                ]
+            
+            audioRecorder = try AVAudioRecorder(url: viewModel.temporaryFileURL, settings: recorderSettings)
             audioRecorder.delegate = self
             audioRecorder.record()
             
@@ -73,13 +73,16 @@ class ViewController: UIViewController {
         if audioRecorder == nil {
             startRecording()
         } else {
-            finishRecording(success: true)
+            stopRecording()
         }
     }
     
-    func finishRecording(success: Bool) {
+    func stopRecording() {
         audioRecorder.stop()
         clearAudioRecorder()
+    }
+    
+    func finishRecording(success: Bool) {
         
         if success {
             microphoneButton.setTitle("Tap to Re-record", for: .normal)
@@ -99,18 +102,24 @@ extension ViewController: AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
 
+        toggleLoading(.blue, .clear)
         if flag {
             viewModel.recognizeAudioFrom(url: recorder.url) { [unowned self] text, error in
              
                 guard error != nil else {
                     self.viewModel.save(recordingText: text)
                     self.finishRecording(success: true)
+                    self.toggleLoading()
                     return
                 }
                 self.finishRecording(success: false)
+                self.toggleLoading()
+                return
             }
         } else {
+            self.toggleLoading()
             finishRecording(success: false)
+            
         }
     }
 }
