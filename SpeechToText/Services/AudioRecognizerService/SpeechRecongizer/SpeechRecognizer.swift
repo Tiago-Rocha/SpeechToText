@@ -1,6 +1,6 @@
 import Foundation
 
-protocol SpeechRecognizerProtocol {
+protocol SpeechRecognizer {
 
     func audioToText(url: URL,  completion: @escaping (String, Error?) -> ())
 }

@@ -14,12 +14,13 @@
 		476D398522666A1E00C318BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476D398322666A1E00C318BD /* LaunchScreen.storyboard */; };
 		476D399022666A1F00C318BD /* SpeechToTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D398F22666A1F00C318BD /* SpeechToTextTests.swift */; };
 		476D399B22666A1F00C318BD /* SpeechToTextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D399A22666A1F00C318BD /* SpeechToTextUITests.swift */; };
-		476D39AB226681B000C318BD /* SpeechRecognizerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */; };
+		476D39AB226681B000C318BD /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39AA226681B000C318BD /* SpeechRecognizer.swift */; };
 		476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */; };
 		476D39BF226BD8A700C318BD /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39BE226BD8A700C318BD /* NoteRepository.swift */; };
 		476D39C3226BD90B00C318BD /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C2226BD90B00C318BD /* Note.swift */; };
 		476D39C5226BD97D00C318BD /* MemoryNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C4226BD97D00C318BD /* MemoryNotesRepository.swift */; };
 		476D39C7226BDDF800C318BD /* RecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C6226BDDF800C318BD /* RecorderViewModel.swift */; };
+		476D39C9226CD07900C318BD /* DependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C8226CD07900C318BD /* DependencyGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +54,13 @@
 		476D399622666A1F00C318BD /* SpeechToTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechToTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		476D399A22666A1F00C318BD /* SpeechToTextUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextUITests.swift; sourceTree = "<group>"; };
 		476D399C22666A1F00C318BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerProtocol.swift; sourceTree = "<group>"; };
+		476D39AA226681B000C318BD /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		476D39B1226B979B00C318BD /* iOSSpeechRecnogizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSpeechRecnogizer.swift; sourceTree = "<group>"; };
 		476D39BE226BD8A700C318BD /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
 		476D39C2226BD90B00C318BD /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		476D39C4226BD97D00C318BD /* MemoryNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryNotesRepository.swift; sourceTree = "<group>"; };
 		476D39C6226BDDF800C318BD /* RecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewModel.swift; sourceTree = "<group>"; };
+		476D39C8226CD07900C318BD /* DependencyGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				476D39B0226B978E00C318BD /* iOS */,
-				476D39AA226681B000C318BD /* SpeechRecognizerProtocol.swift */,
+				476D39AA226681B000C318BD /* SpeechRecognizer.swift */,
 			);
 			path = SpeechRecongizer;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 		476D39B3226B981700C318BD /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				476D39C8226CD07900C318BD /* DependencyGraph.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -360,8 +363,9 @@
 				476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */,
 				476D39C7226BDDF800C318BD /* RecorderViewModel.swift in Sources */,
 				476D39C5226BD97D00C318BD /* MemoryNotesRepository.swift in Sources */,
+				476D39C9226CD07900C318BD /* DependencyGraph.swift in Sources */,
 				476D397B22666A1C00C318BD /* AppDelegate.swift in Sources */,
-				476D39AB226681B000C318BD /* SpeechRecognizerProtocol.swift in Sources */,
+				476D39AB226681B000C318BD /* SpeechRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,9 +6,9 @@ class RecorderViewModel {
     
     private let currentRecordingName = "current.m4a"
     
-    private let recognizer: SpeechRecognizerProtocol
+    private let recognizer: SpeechRecognizer
     
-    init(noteRepository: NoteRepository, recognizer: SpeechRecognizerProtocol) {
+    init(noteRepository: NoteRepository, recognizer: SpeechRecognizer) {
         self.repository = noteRepository
         self.recognizer = recognizer
     }

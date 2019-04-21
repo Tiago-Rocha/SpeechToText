@@ -3,8 +3,7 @@ import Speech
 
 class ViewController: UIViewController {
 
-    private let viewModel = RecorderViewModel(noteRepository: MemoryNotesRepository()
-        , recognizer: SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!)
+    private let viewModel = DependencyGraph().getRecorderViewModel()
     
     @IBOutlet weak var microphoneButton: UIButton!
     

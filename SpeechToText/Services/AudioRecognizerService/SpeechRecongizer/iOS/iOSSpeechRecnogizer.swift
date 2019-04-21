@@ -1,6 +1,6 @@
 import Speech
 
-extension SFSpeechRecognizer: SpeechRecognizerProtocol {
+extension SFSpeechRecognizer: SpeechRecognizer {
 
     func audioToText(url: URL, completion: @escaping (String, Error?) -> ()) {
         
