@@ -5,6 +5,8 @@ class DependencyGraph {
     
     private var noteRepository: NoteRepository?
     
+    static let shared = DependencyGraph()
+    
     func getRecorderViewModel() -> RecorderViewModel {
     
         return RecorderViewModel(noteRepository: getMemoryNoteRepository(), recognizer: getiOSSpeechRecognizer())
@@ -13,7 +15,8 @@ class DependencyGraph {
     func getMemoryNoteRepository() -> NoteRepository {
         
         guard let _noteRepository = noteRepository else {
-            return MemoryNotesRepository()
+            noteRepository = MemoryNotesRepository()
+            return noteRepository!
         }
         return _noteRepository
     }

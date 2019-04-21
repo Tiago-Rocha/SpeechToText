@@ -21,6 +21,7 @@
 		476D39C5226BD97D00C318BD /* MemoryNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C4226BD97D00C318BD /* MemoryNotesRepository.swift */; };
 		476D39C7226BDDF800C318BD /* RecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C6226BDDF800C318BD /* RecorderViewModel.swift */; };
 		476D39C9226CD07900C318BD /* DependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39C8226CD07900C318BD /* DependencyGraph.swift */; };
+		476D39CC226CDD3700C318BD /* ViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476D39CB226CDD3700C318BD /* ViewControllerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		476D39C4226BD97D00C318BD /* MemoryNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryNotesRepository.swift; sourceTree = "<group>"; };
 		476D39C6226BDDF800C318BD /* RecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewModel.swift; sourceTree = "<group>"; };
 		476D39C8226CD07900C318BD /* DependencyGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyGraph.swift; sourceTree = "<group>"; };
+		476D39CB226CDD3700C318BD /* ViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		476D397922666A1C00C318BD /* SpeechToText */ = {
 			isa = PBXGroup;
 			children = (
+				476D39CA226CDD2000C318BD /* Extensions */,
 				476D39BA226BD7A800C318BD /* MainViewController */,
 				476D39B6226B9A0400C318BD /* Services */,
 				476D39B3226B981700C318BD /* DI */,
@@ -224,6 +227,14 @@
 				476D39C2226BD90B00C318BD /* Note.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		476D39CA226CDD2000C318BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				476D39CB226CDD3700C318BD /* ViewControllerExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +373,7 @@
 				476D397D22666A1C00C318BD /* RecorderViewController.swift in Sources */,
 				476D39B2226B979B00C318BD /* iOSSpeechRecnogizer.swift in Sources */,
 				476D39C7226BDDF800C318BD /* RecorderViewModel.swift in Sources */,
+				476D39CC226CDD3700C318BD /* ViewControllerExt.swift in Sources */,
 				476D39C5226BD97D00C318BD /* MemoryNotesRepository.swift in Sources */,
 				476D39C9226CD07900C318BD /* DependencyGraph.swift in Sources */,
 				476D397B22666A1C00C318BD /* AppDelegate.swift in Sources */,
