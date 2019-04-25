@@ -9,6 +9,7 @@ class RecorderViewModel {
     private let recognizer: SpeechRecognizer
     
     init(noteRepository: NoteRepository, recognizer: SpeechRecognizer) {
+        
         self.repository = noteRepository
         self.recognizer = recognizer
     }
@@ -38,5 +39,9 @@ class RecorderViewModel {
         recognizer.audioToText(url: url) { text, error in
             completion(text, error)
         }
+    }
+    
+    var numberOfRecordings: Int {
+        return repository.listAll().count
     }
 }

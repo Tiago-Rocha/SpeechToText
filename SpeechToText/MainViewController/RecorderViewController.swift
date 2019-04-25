@@ -9,6 +9,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var playButton: UIButton!
+    
     var recordingSession: AVAudioSession!
     
     var audioRecorder: AVAudioRecorder!
@@ -62,7 +64,8 @@ class ViewController: UIViewController {
             audioRecorder.record()
             
             microphoneButton.setTitle("Tap to Stop", for: .normal)
-        } catch let error {
+        }
+        catch let error {
             print(String(describing: error))
             finishRecording(success: false)
         }
@@ -96,6 +99,9 @@ class ViewController: UIViewController {
         
         audioRecorder = nil
     }
+    @IBAction func playBtnTapped(_ sender: Any) {
+        print(viewModel.numberOfRecordings)
+    }
 }
 
 extension ViewController: AVAudioRecorderDelegate {
@@ -108,6 +114,7 @@ extension ViewController: AVAudioRecorderDelegate {
              
                 guard error != nil else {
                     self.viewModel.save(recordingText: text)
+                    self.textView.text = text
                     self.finishRecording(success: true)
                     self.toggleLoading()
                     return
@@ -119,7 +126,6 @@ extension ViewController: AVAudioRecorderDelegate {
         } else {
             self.toggleLoading()
             finishRecording(success: false)
-            
         }
     }
 }
